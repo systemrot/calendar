@@ -6,12 +6,7 @@ const viewTools = target => target.style.display === 'none' ?  target.style.disp
 
 const methods = {
   componentDidMount() {
-    const addButton = document.getElementsByClassName("change")[0];
-    const tools = document.getElementsByClassName('AddEventToll')[0];
-    const exit = document.getElementsByClassName("fa-times")[0];
-    exit.addEventListener('click', () =>  viewTools(tools));
-    tools.style.display = 'none';
-    addButton.addEventListener('click', () => viewTools(tools))
+
   }
 };
 

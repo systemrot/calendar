@@ -18,13 +18,6 @@ const months = ["Января", "Февраля", "Марта", "Апреля", 
 
 const methods = {
   componentDidMount(props){
-    // ПРОДОЛЖИТЬ ПИСАТЬ БРЕД ИСПОЛЬЗУЯ ТЕПЕРЬ ПРОПСЫ - ОтРЕДАКТИТЬ 2 ПАНЕЛИ добавить и редактировать ивенты + поиск
-    // ПРОДОЛЖИТЬ ПИСАТЬ БРЕД ИСПОЛЬЗУЯ ТЕПЕРЬ ПРОПСЫ - ОтРЕДАКТИТЬ 2 ПАНЕЛИ добавить и редактировать ивенты + поиск
-    // ПРОДОЛЖИТЬ ПИСАТЬ БРЕД ИСПОЛЬЗУЯ ТЕПЕРЬ ПРОПСЫ - ОтРЕДАКТИТЬ 2 ПАНЕЛИ добавить и редактировать ивенты + поиск
-    // ПРОДОЛЖИТЬ ПИСАТЬ БРЕД ИСПОЛЬЗУЯ ТЕПЕРЬ ПРОПСЫ - ОтРЕДАКТИТЬ 2 ПАНЕЛИ добавить и редактировать ивенты + поиск
-    // ПРОДОЛЖИТЬ ПИСАТЬ БРЕД ИСПОЛЬЗУЯ ТЕПЕРЬ ПРОПСЫ - ОтРЕДАКТИТЬ 2 ПАНЕЛИ добавить и редактировать ивенты + поиск
-    // ПРОДОЛЖИТЬ ПИСАТЬ БРЕД ИСПОЛЬЗУЯ ТЕПЕРЬ ПРОПСЫ - ОтРЕДАКТИТЬ 2 ПАНЕЛИ добавить и редактировать ивенты + поиск
-
     const listOfDays = document.getElementsByClassName("Day");
     const daysfield = document.getElementsByClassName("days")[0];
 
@@ -44,46 +37,15 @@ const methods = {
     deleteSelectedEvent.addEventListener('click', () => {
       // console.log(props.events)
       const dayNumber = parseInt(document.getElementsByClassName("eventDate")[0].innerHTML);
-      console.log(dayNumber);
       props.events[1](prevEvents => {
+        let newEvents = [];
         for(let i = 0; i < prevEvents.length; i+=1){
           if(+prevEvents[i].date.day === dayNumber && +prevEvents[i].date.month - 1 === props.date[0][0].month && +prevEvents[i].date.year === props.date[0][0].year){
-            console.log("deleting " + i)
-            console.log(prevEvents)
             prevEvents.splice(i,1);
-            delete prevEvents[i]
-            console.log(prevEvents)
-            const newArr = prevEvents;
-            console.log(newArr);
-            let test = [
-    {
-      name: "Новоселье",
-      date:{
-        day: "11",
-        month: "07",
-        year: "2019"
-      },
-      namesOfParticipants: "Ростислав",
-      description: "Переселяюсь в новый дом на холме, или в лесу, да точно! В хижину в лесу!",
-      id: 161
-    },
-    {
-      name: "Встреча с другом",
-      date:{
-        day: "17",
-        month: "05",
-        year: "2019"
-      },
-      namesOfParticipants: "Вася Пупкин",
-      description: "Встретиться и передать ssd диск ( должен вернуть через пару недель )",
-      id: 161
-    }
-    ];      console.log("---------")
-            test = new Object(newArr);
-            console.log(test)
-            return test;
           }
+          newEvents.push(prevEvents[i]);
         }
+        return newEvents;
       })
     });
 
@@ -165,6 +127,7 @@ const buildDays = (events, date) => {
   let curEvent = undefined;
    for (let i = 1; i <= daysInMonth(curMonth, curYear); i++) {
     for(let j=0;j<events[0].length;j+=1){
+      console.log(events[0][j].date)
       if(+events[0][j].date.day === dayNumber && +events[0][j].date.month === curMonth && +events[0][j].date.year === curYear){
         curEvent = events[0][j];
       }
@@ -180,6 +143,7 @@ const buildDays = (events, date) => {
 const Month = (props) => {
   const events = useContext(EventListContext);
   const [date] = useContext(DateContext);
+  console.log(events);
   const days = buildDays(events, date[0]);
   return (
     <div className="month">
