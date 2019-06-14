@@ -23,12 +23,18 @@ const CureDate = () => {
       }
     });
   };
+
+  const jumpToCurrentDate = () => {
+    const currentDate = new Date();
+    setDate(() => [{month: currentDate.getMonth(), year: currentDate.getFullYear()}])
+  };
+
   return (
     <div className={"CureDate"}>
       <button className="fas fa-caret-left CureDate-item" onClick={prevMonth}></button>
       <div className="Cure-month CureDate-item"><h3>{months[date[0].month]} {date[0].year}</h3></div>
       <button className="fas fa-caret-right CureDate-item" onClick={nextMonth}></button>
-      <button className="today CureDate-item">сегодня</button>
+      <button className="today CureDate-item" onClick={jumpToCurrentDate}>сегодня</button>
     </div>
   );
 }

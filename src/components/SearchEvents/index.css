@@ -1,0 +1,100 @@
+.SearchEvents{
+	transition: all .3s;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	background-color: #ffffff;
+	width: 232px;
+	max-height: 424px;
+	position: relative;
+	z-index: 999999;
+	top:40px;
+	left: 697px;
+	background: #e8e8e8;
+}
+
+.searchEvents-t-w-s{
+
+}
+
+.SearchEvents-list{
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 304px;
+}
+
+.searchedEvents-item{
+	border-radius: 2px;
+	padding-left: 8px;
+	margin-top: 0px;
+	margin-left: 8px;
+	margin-bottom: 10px;
+	margin-right: 16px;
+	width: 192px;
+	height: 42px;
+	font-family: 'IBM Plex Sans', sans-serif;
+	transition: all .2s;
+
+/*	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;*/
+}
+.searchedEvents-item:hover{
+	cursor: pointer;
+	background: rgba(85, 136, 163, .5);
+}
+
+.empty{
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	margin-bottom: 6.30%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	height: 15px;
+	font-size: 16px;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #607d8b;
+}
+#empty:hover{
+	cursor: default;
+}
+
+.searchedEvents-item > h4{
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 192px;
+	height: 22px;
+	font-size: 16px;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #607d8b;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+}
+
+.searchedEvents-item > span{
+	width: 192px;
+	height: 15px;
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #607d8b;
+}

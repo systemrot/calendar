@@ -5,50 +5,183 @@ export const EventListContext = createContext();
 export const EventListProvider = (props) => {
 	const [events, setEvent] = useState([
 		{
-			name: "Др",
+			name: "др",
 			date:{
-				day: "23",
-				month: "06",
+				day: "09",
+				month: "6",
 				year: "2019"
 			},
-			namesOfParticipants: "Дмитрий Иванов",
-			description: "Отмечаем день рождением Димы, нужно отложить 5000р. И Заказать автобус.",
-			id: 161
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 123
 		},
 		{
-			name: "DeadLine",
+			name: "Прогулка",
 			date:{
-				day: "10",
-				month: "06",
+				day: "09",
+				month: "5",
 				year: "2019"
 			},
-			namesOfParticipants: "Я и работодатели",
-			description: "Нужно доделать календарь, чем быстрее тем лучше, но дедлайн указан ( правда он выдуман, правда как и всё это!)",
-			id: 6121
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 124
 		},
 		{
-			name: "Новоселье",
+			name: "Отдых",
 			date:{
 				day: "11",
-				month: "07",
+				month: "6",
 				year: "2019"
 			},
-			namesOfParticipants: "Ростислав",
-			description: "Переселяюсь в новый дом на холме, или в лесу, да точно! В хижину в лесу!",
-			id: 161
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 125
 		},
 		{
-			name: "Встреча с другом",
+			name: "Работа",
 			date:{
-				day: "17",
-				month: "05",
+				day: "09",
+				month: "7",
 				year: "2019"
 			},
-			namesOfParticipants: "Вася Пупкин",
-			description: "Встретиться и передать ssd диск ( должен вернуть через пару недель )",
-			id: 161
-		}
-		]);
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 126
+		},
+		{
+			name: "Переезд",
+			date:{
+				day: "2",
+				month: "9",
+				year: "2019"
+			},
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 127
+		},
+		{
+			name: "Перелет",
+			date:{
+				day: "09",
+				month: "1",
+				year: "2019"
+			},
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 128
+		},
+		{
+			name: "Москва",
+			date:{
+				day: "3",
+				month: "9",
+				year: "2019"
+			},
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 129
+		},
+		{
+			name: "Море",
+			date:{
+				day: "14",
+				month: "7",
+				year: "2019"
+			},
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 130
+		},
+				{
+			name: "Дайвинг",
+			date:{
+				day: "15",
+				month: "6",
+				year: "2019"
+			},
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 131
+		},
+		{
+			name: "Прогулка на слонах",
+			date:{
+				day: "17",
+				month: "5",
+				year: "2019"
+			},
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 132
+		},
+		{
+			name: "Полет на воздушном шаре",
+			date:{
+				day: "22",
+				month: "5",
+				year: "2019"
+			},
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 133
+		},
+		{
+			name: "Прыгаю с моста в воду",
+			date:{
+				day: "23",
+				month: "6",
+				year: "2019"
+			},
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 134
+		},
+		{
+			name: "Снимаю фильм",
+			date:{
+				day: "2",
+				month: "6",
+				year: "2020"
+			},
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 135
+		},
+		{
+			name: "Лечу в космос",
+			date:{
+				day: "1",
+				month: "1",
+				year: "2019"
+			},
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 136
+		},
+		{
+			name: "Возвращаюсь из космоса",
+			date:{
+				day: "1",
+				month: "6",
+				year: "2019"
+			},
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 137
+		},
+		{
+			name: "Полет на солнце",
+			date:{
+				day: "8",
+				month: "12",
+				year: "2019"
+			},
+			namesOfParticipants: "Мэд, Илья",
+			description: "Ничего интересного",
+			id: 138
+		},
+
+	]);
 
 	return(
 		<EventListContext.Provider value={[events, setEvent]}>

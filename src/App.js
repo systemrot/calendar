@@ -6,12 +6,14 @@ import Calendar from "./hoc/Calendar";
 import Month from "./containers/Month";
 import {EventListContext} from "./EventListContext";
 import {DateContext} from "./DateContext";
+import {DayContext} from "./DateContext";
 
 
 const App = () => {
   const [events, setEvents] = useContext(EventListContext);
   const [date, setDate] = useContext(DateContext);
-  const getMonth = () => <Month events={[events, setEvents]} date={[date, setDate]}/>
+  const [day, setDay] = useContext(DayContext);
+  const getMonth = () => <Month events={[events, setEvents]} date={[date, setDate]} day={[day, setDay]}/>
   return (
     <Calendar>
       <HashRouter>

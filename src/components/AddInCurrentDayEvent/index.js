@@ -1,30 +1,27 @@
 import React, {useContext, useState} from "react";
 import {EventListContext} from "../../EventListContext";
 import lifecycle from 'react-pure-lifecycle';
+import {DayContext} from "../../DateContext";
+import {DateContext} from "../../DateContext";
 
-const viewTools = target => target.style.display === 'none' ?  target.style.display = '' : target.style.display = 'none';
 
 const methods = {
   componentDidMount() {
-    const addButton = document.getElementsByClassName("change")[0];
-    const tools = document.getElementsByClassName('AddEventToll')[0];
-    const exit = document.getElementsByClassName("fa-times")[0];
-    exit.addEventListener('click', () =>  viewTools(tools));
-    tools.style.display = 'none';
-    addButton.addEventListener('click', () => viewTools(tools))
+
   }
 };
 
 const AddInCurrentDayEvent = () => {
 
   const [name, setName] = useState("");
-  const [date, setDate] = useState("");
   const [namesOfParticipants, setNamesOfParticipants] = useState("");
   const [description, setDescription] = useState("");
   const [events, setEvent] = useContext(EventListContext);
+  if(events){}//tmp solution do not show console-warning about not using "events" 
+  const [day] = useContext(DayContext);
+  const [date] = useContext(DateContext);
 
   const updateName = e => {setName(e.target.value)};
-  const updateDate = e => setDate(e.target.value);
   const updateNamesOfParticipants = e => setNamesOfParticipants(e.target.value);
   const updateDescription = e => setDescription(e.target.value);
   const AddEvent = e => {
@@ -32,13 +29,12 @@ const AddInCurrentDayEvent = () => {
     setEvent(prevEvents => {
       if(name && date && namesOfParticipants && description){
         setName("");
-        setDate("");
         setNamesOfParticipants("");
         setDescription("");
         const DayMonthYear = {
-          day: date.split(',')[0],
-          month: date.split(',')[1],
-          year: date.split(',')[2]
+          day: day,
+          month: date[0].month+1,
+          year: date[0].year
         };
         return [...prevEvents, {name: name, date: DayMonthYear, namesOfParticipants: namesOfParticipants, description: description, id: Math.floor(999999999 * Math.random())}]
       }else{
@@ -46,7 +42,6 @@ const AddInCurrentDayEvent = () => {
         return prevEvents;
       }
     });
-    if(false)console.log(events);
   }
 
 

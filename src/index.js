@@ -7,15 +7,24 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css';
 import {EventListProvider} from "./EventListContext";
 import {DateProvider} from "./DateContext";
+import {DayProvider} from "./DateContext";
+import {SearchProvider} from "./SearchContext";
+import {FoundEventsProvider} from "./FoundEventsContext/";
 import App from './App';
 
 const appShell = (
 	<DateProvider>
-	  <EventListProvider>
-		<BrowserRouter>
-		  <App />
-		</BrowserRouter>
-	  </EventListProvider>
+		<DayProvider>
+			<SearchProvider>
+				  <EventListProvider>
+				  	<FoundEventsProvider>
+				  		<BrowserRouter>
+				  		  <App />
+				  		</BrowserRouter>
+				  	</FoundEventsProvider>
+				  </EventListProvider>
+			</SearchProvider>
+		</DayProvider>
 	</DateProvider>
 );
 

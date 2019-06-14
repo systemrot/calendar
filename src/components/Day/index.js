@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
 import lifecycle from 'react-pure-lifecycle';
+import {DateContext} from "../../DateContext";
 
-// const curDay = () => new Date().getDate(); 
 
 const methods = {
   componentDidMount(props){
@@ -40,9 +40,26 @@ const methods = {
 };
 
 const Day = (props) =>  {
+
+    const [date] = useContext(DateContext);
+    const currentDate = new Date();
+    // console.log(date[0].month+1, date[0].year);
+    // console.log(new Date().getMonth())
+    
+    const getStyle = () => {
+        if(props.day === currentDate.getDate() && date[0].month === currentDate.getMonth() && date[0].year === currentDate.getFullYear()){
+            return {
+                background: "rgba(85, 136, 163, 0.5)"
+            };
+        }else{
+
+            return {};
+        }
+    }
+
 	if(props.event){
 		return (
-		  <div className={"Day"}>
+		  <div className={"Day"} style={getStyle()}>
 		    <header className="numbeerOfDay">{props.day}</header>
 		    <div className="day-box-item EventInBox">
 				<div className="day-box-item event-title">
@@ -56,7 +73,7 @@ const Day = (props) =>  {
 		);
 	}else{
 		return (
-		  <div className={"Day"}>
+		  <div className={"Day"} style={getStyle()}>
 		    <header className="numbeerOfDay">{props.day}</header>
 		  </div>
 		);

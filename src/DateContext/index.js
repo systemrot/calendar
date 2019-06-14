@@ -16,3 +16,21 @@ export const DateProvider = (props) => {
 		</DateContext.Provider>
 	);
 }
+
+///////////////////////////////////////////
+
+export const DayContext = createContext();
+
+export const DayProvider = (props) => {
+	const [day, setDay] = useState([
+	{
+		selectedDay: "",
+	}
+	]);
+
+	return(
+		<DayContext.Provider value={[day, setDay]}>
+			{props.children}
+		</DayContext.Provider>
+	);
+}

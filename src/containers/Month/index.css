@@ -2,11 +2,18 @@
   color: #b0bec5;
   font-family: 'IBM Plex Sans', sans-serif;
 }
+
 .calendar{
 	/*box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.5);*/
 	box-shadow: 0px 30px 40px #8f8b84, -20px -20px 40px rgba(85,136,163,0.3);
 	border-radius: 5px;
 	font-family: 'IBM Plex Sans', sans-serif;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2%;
+	width: 992px;
+	height: 896px;
+	border: solid 1px #b0bec5;
 }
 
 .Day{
@@ -60,14 +67,6 @@
 	border: solid 1px #00334e;
 }
 
-.calendar{
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 5%;
-	width: 992px;
-	height: 896px;
-	border: solid 1px #b0bec5;
-}
 .HeaderFunc{
 	background: #5588a3;
 	height: 104px;
@@ -119,13 +118,17 @@ button:hover{
 	padding-right: 48px;
 }
 
+.search-icon:hover{
+	cursor: default;
+}
+
 .search-icon{
 	width: 22px;
 	height: 22px;
 	background: none;
 	position: relative;
 	left:340px;
-	top: 7px;
+	top: 4px;
 	background-image:url(../../img/magnifier.png);
 	background-repeat: no-repeat;
 	background-size:22px;
@@ -133,6 +136,7 @@ button:hover{
 
 .search-text{
 	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 16px;
 	padding-left: 8px;
 	width: 224px;
 	height: 26px;
@@ -141,7 +145,7 @@ button:hover{
 	position: relative;
 	left:350px;
 	background-color: #E8E8E8;
-	transition: .2s;
+	transition: all .2s;
 }
 
 .search-text:focus{
@@ -210,6 +214,7 @@ h3{
 
 
 .AddEventToll{
+	transition: all .2s;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); 
 	width: 312px;
 	height: 328px;
@@ -220,18 +225,6 @@ h3{
 	z-index: 999;
 }
 
-/*.pointer{
-	text-shadow: 0 0 20px 20px black;
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 0 20px 25px 20px;
-	border-color: transparent transparent black transparent;
-	position: relative;
-	top: -25px;
-	left:30px;
-}
-*/
 .triangle-with-shadow {
   width: 28px;
   height: 18px;
@@ -254,6 +247,7 @@ h3{
 }
 
 .Toll-item{
+	background: #F0F0F0;
 	padding-left: 8px;
 	width: 240px;
 	height: 28px;
@@ -266,6 +260,7 @@ h3{
 }
 
 .t-i-text-area{
+	background: #F0F0F0;
 	padding-left: 8px;
 	font-family: 'IBM Plex Sans', sans-serif;
 	font-size: 16px;
@@ -341,6 +336,9 @@ h3{
 	color: #607d8b;
 }
 .eventName{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 	width: 241px;
 	height: 27px;
 	font-size: 20px;
@@ -352,9 +350,10 @@ h3{
 	color: #607d8b;
 }
 .eventDescr{
-	width: 256px;
+	width: 246px;
 	max-height: 104px;
-	overflow: hidden;
+	overflow-x:hidden;
+	overflow-y:auto;
 	font-family: IBMPlexSans;
 	font-size: 14px;
 	font-weight: normal;
@@ -388,6 +387,11 @@ h3{
 	letter-spacing: normal;
 	color: #607d8b;
 }
+
+.ChangeEventTool-item {
+
+}
+
 .eventMatesData{
 	height: 40px;
 }
@@ -402,6 +406,23 @@ h3{
 .eventButtons-t-i-button{
 	margin-top: 25px;
 	margin-right: 25px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px #5588A3; 
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5588A3; 
+  border-radius: 10px;
 }
 
 @media (min-width:768px) { }
